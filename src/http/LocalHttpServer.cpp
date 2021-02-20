@@ -39,6 +39,8 @@ void LocalHttpServer::begin() {
     if (_debug) {
         Serial.println("Server started...");
     }
+
+    DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
     // Begin the server
     server.begin();
 
